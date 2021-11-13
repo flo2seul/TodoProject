@@ -7,6 +7,12 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface TodoRepository extends JpaRepository<TodoEntity, Long> {
+public interface TodoRepository extends JpaRepository<TodoEntity, String> {
+
+
     List<TodoEntity> findByUserId(String userId);
+//    List<TodoEntity> updateTodo(TodoEntity entity);
+//    void deleteTodoEntityBy();
+
+
 }
