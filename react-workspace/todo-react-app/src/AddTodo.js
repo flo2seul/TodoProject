@@ -5,13 +5,25 @@ class AddTodo extends React.Component {
     constructor(props) {
         super(props);
         this.state = { item: {title: "" }}; 
+        this.add = props.add;
     }
-    // (1) 함수 작성
+    //  함수 작성
     onInputChange = (e) => {
         const thisItem = this.state.item;
         thisItem.title = e.target.value;
         this.setState({ item: thisItem });
         console.log(thisItem);
+    }
+    // 함수 작성
+    onButtonClick = () => {
+        this.add(this.state.item); //add 함수 사용
+        this.setState({ item: {title: "" } });
+    }
+    // 함수 작성
+    enterKeyEventHandler = (e) => {
+        if  (e.key === 'Enter') {
+            this.onButtonClick();
+        }
     }
 
     render() {
@@ -23,14 +35,17 @@ class AddTodo extends React.Component {
                         <TextField 
                         placeholder="Add Todo here" 
                         fullWidth
-                        // onChange={this.onInputChange}
-                        // value={this.state.item.title} 
+                        onChange={this.onInputChange}
+                        value={this.state.item.title} 
+                        onKeyPress={this.enterKeyEventHandler}
                         />
                     </Grid>
                     <Grid xs={1} md={1} item>
                         <Button fullWidth 
                         color="secondary" 
-                        variant="outlined">
+                        variant="outlined"
+                        onClick={this.onButtonClick}
+                        >
                             +
                         </Button>
                     </Grid>
