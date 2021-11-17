@@ -37,8 +37,8 @@ public class UserController {
             UserEntity resteredUser = userService.create(user);
             UserDTO respnseUserDTO = UserDTO.builder()
                     .email(resteredUser.getEmail())
-                    .id(resteredUser.getEmail())
-                    .username(resteredUser.getId())
+                    .id(resteredUser.getId())
+                    .username(resteredUser.getUsername())
                     .build();
             return ResponseEntity.ok().body(respnseUserDTO);
         } catch (Exception e) {
