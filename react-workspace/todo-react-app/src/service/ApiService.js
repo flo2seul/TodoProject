@@ -26,6 +26,14 @@ export function call(api, method, request) {
         if (error.status === 403) {
             window.location.href = "/login"; // redirect
         }
-        return Promise.reject(json);
+        return Promise.reject(error);
+    });
+}
+
+export function signin(userDTO) {
+    return call("/auth/signin","POST",userDTO)
+    .then((response) => {
+        console.log("response : ", response);
+        alert("로그인 토큰: " + response.token);
     });
 }
