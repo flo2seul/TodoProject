@@ -58,7 +58,7 @@ delete = (item) => {
     var navigationBar = (
       <AppBar position="static">
         <Toolbar>
-          <Grid justify="space-between" container>
+          <Grid container justify="space-between">
             <Grid item>
               <Typography variant="h6">오늘의 할일</Typography>
 

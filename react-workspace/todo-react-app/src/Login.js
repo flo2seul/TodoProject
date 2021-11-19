@@ -24,7 +24,7 @@ class Login extends React.Component {
 
     render() {
         return (
-            <Container component="main" masWidth="xs" style={{ marginTop: "8%"}}>
+            <Container component="main" maxWidth="xs" style={{ marginTop: "8%"}}>
                
                 <form noValidate onSubmit={this.handleSubmit}>
                     {" "}
