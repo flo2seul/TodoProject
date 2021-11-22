@@ -7,7 +7,7 @@ export function call(api, method, request) {
             "Content-Type": "application/json",
         });
     //local storage에서 ACCES_TOKEN 가져오기
-        const accessToken = localStorage.getItem("ACCESS_TOKEN");
+        const accessToken = localStorage.getItem(ACCESS_TOKEN);
         if (accessToken && accessToken !== null) {
             headers.append("Authrorization", "Bearer" + accessToken);
         }
