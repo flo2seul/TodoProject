@@ -37,8 +37,12 @@ export function call(api, method, request) {
       // 추가된 부분
       console.log(error.status);
       if (error.status === 403) {
+        //window.alert("잘못된 이메일 혹은 비밀번호입니다."); 
         window.location.href = "/login"; // redirect
       }
+  
+      window.alert("이미 사용중인 이메일입니다."); 
+   
       return Promise.reject(error);
     });
 }
